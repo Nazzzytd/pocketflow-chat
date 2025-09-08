@@ -2,8 +2,8 @@ from openai import OpenAI
 import os
 
 def call_llm(messages):
-    client = OpenAI(base_url="https://35.aigcbest.top/v1",
-    api_key=os.environ.get("OPENAI_API_KEY", "sk-tHMFbjrXYxsUaIQYZqM4b205o0LKBq5Ub6fxcyrXzbZdS2pR")
+    client = OpenAI(base_url= os.getenv("OPENAI_BASE_URL"),
+    api_key=os.getenv("OPENAI_API_KEY")
     )
     
     response = client.chat.completions.create(
